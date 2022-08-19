@@ -70,8 +70,6 @@ After checking several publications, blocks are only used in the contracting par
 
 ## Why not use blocks on the upsampling part of Unet? 
 I choose to not use block in the right part of the model because concatenation from left to right part already skip connections. Adding resnet blocks should decrease training speed and increase material needs for little to no benefits.
-## The shaping problem in resnet 
-With resnet, we can have trouble with Add operation when input layers came from upsampling or pooling operation, because shapes are different (number of filters from last convolution is the cause)
-I choose not to count that operation as an additional convolution because it is a necessary operation. 
+ 
 ## Inception inspired block
 As part of optionnal request, I created an inception inspired unet. Contracting part of the network is the same as before, but blocks are inception inspired. Mode to use it is "inception"
